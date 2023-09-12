@@ -25,7 +25,6 @@ def ask_for_input():
         user_guess = input("Please enter your chosen single letter: ").strip().casefold() 
         
         if (len(user_guess) == 1) and (user_guess.isalpha()):
-            print(f'Good guess: {user_guess}\n')
             guess_rejected = False #answer is accepted
             check_guess(user_guess)
         elif (len(user_guess) != 1) or (user_guess.isalpha()==False):
@@ -33,8 +32,6 @@ def ask_for_input():
         else: 
             print('Error in code')
 
-#call check guess function 
-    
 
 
 def check_guess(user_guess):
