@@ -6,15 +6,15 @@ import random_word
 def ask_for_input():
     
     """
-    Prompts user for letter and continue looping until letter is accepted (user input should be one alphabetical letter). 
+    Prompts user for letter and continue looping until letter is accepted (user input should be one alphabetical letter), 
+    calling check_guess method when condition is true. 
     
-    Code removes whitescapes and converts to lowercase and if else loop then checks it is a 1 alphabetical character. 
     
     Inputs:
     -
     
     Outputs:
-    user_guess: letter guessed by user, used by check_guess(passed_user_guess)
+    user_guess: letter guessed by user, used by check_guess(user_guess)
     """
     
     guess_rejected = True
@@ -30,7 +30,6 @@ def ask_for_input():
             check_guess(user_guess)
         elif (len(user_guess) != 1) or (user_guess.isalpha()==False):
             print(f'Invalid input: {user_guess}. Please, enter a single alphabetical character\n')   
-            check_guess(user_guess)
         else: 
             print('Error in code')
 
@@ -44,7 +43,7 @@ def check_guess(user_guess):
     Checks if letter user chooses is in randomly generated word and prints appropriate message to user. 
     
     Inputs:
-    passed_user_guess: letter guessed by user, from ask_for_input() method
+    user_guess: letter guessed by user, from ask_for_input() method
     
     Outputs:
     -
@@ -66,10 +65,4 @@ def check_guess(user_guess):
 
 
 
-
-# #saves return statement from method into variable? 
-# passed_user_guess = ask_for_input() 
-# check_guess(passed_user_guess)
 ask_for_input()
-#call ask for input 
-#put the check_guess in ask for input method 
