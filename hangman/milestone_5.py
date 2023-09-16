@@ -3,33 +3,33 @@ import random
 #class definition
 class Hangman:
     """
-    The class is used to represent an instance of game of Hangman. 
+    The class is used to represent an instance of a game of Hangman. 
     
-    Hangman game that receives letter guess from user and checks if it present in the word chosen.
-    Start with default number of lives that can be changed in the code and a word chosen randomly from a hard-coded list.
+    It receives a letter from user input, checks it is a single alphabetical letter and checks if it present in the Hangman word chosen.
+    It starts with a default number of lives and a word chosen randomly from the word_list variable.
     
     Parameters:
     ----------
         word_list (list): 
-            hard coded list of words that the word used in the game is randomly selected from. 
+            A list of words that the Hangman word used in the game is randomly selected from. 
         num_lives (int): 
-            number of lives user has left. Default is 5. 
+            The number of lives the user has left. Default is 5. 
     
     Arguments:
     ----------
-        word(str): 
-            word that is used in the hangman game that the user must guess. 
-        word_guessed(list): 
-            list of underscores that represent letters in the word. Underscores replaced when letter is guessed. 
-        num_letters(int): 
-            the number of unique letters in the word. 
-        lists_letters(list): 
-            the letters guessed by the user, correct and incorrect. 
+        word_to_guess(str): 
+            The word that is used in the Hangman game that the user must guess. 
+        word_guessed_user_visible(list): 
+            A list of underscores that represent letters in the word. Underscores are replaced when the letter is guessed. 
+        num_unique_correct_letters_unguessed(int): 
+            The number of unique letters in the word_to_guess. 
+        all_guessed_letters(list): 
+            The letters guessed by the user, correct and incorrect. 
         
     Methods:
     ---------
         check_letters(self, letter): 
-            Confirms whether the letter from from the ask_letter method is in the word being guessed. 
+            Confirms whether the letter from the ask_letter method is in the word_to_guess being guessed. 
         ask_letter(self): 
             Accepts letter user enters only if the input is a singular alphabetical character. 
     """
@@ -39,50 +39,50 @@ class Hangman:
         """Initalise variables of the class and prints start message to user. 
 
         Args:
-            word_list (list): hard coded list of words that the word used in the game is randomly selected from. 
+            word_list (list): hard coded list of words that the word_to_guess used in the game is randomly selected from. 
             num_lives (int): number of lives user has left. Default is 5. 
         """
         self.word_list = word_list
         self.num_lives = num_lives
         
-        self.word = random.choice(word_list).lower()
-        self.word_guessed = ['_' for element in range(len(self.word))]
-        self.num_letters = int(len(set(self.word))) 
-        self.lists_letters = list()
+        self.word_to_guess = random.choice(word_list).lower()
+        self.word_guessed_user_visible = ['_' for element in range(len(self.word_to_guess))]
+        self.num_unique_correct_letters_unguessed = int(len(set(self.word_to_guess))) 
+        self.all_guessed_letters = list()
 
-        print(f'\nThe mystery word has {self.num_letters} characters unguessed.')
-        print(f'\t{self.word_guessed}')
+        print(f'\nThe mystery word has {self.num_unique_correct_letters_unguessed} character(s) unguessed.')
+        print(f'\t{self.word_guessed_user_visible}')
     
     
    
     def __check_letter(self, letter):
-        """Confirms whether the letter passed from the ask_letter method is in the Hangman word being guessed. 
+        """Confirms whether the letter passed from the ask_letter method is in the Hangman word_to_guess being guessed. 
         
-        If the letter is in the word it prints a confirmation message to the user and reduces the number of unique letters in the Hangman word that have not been guessed yet. It then 
-        tells the user how many letters are left to guess in the Hangman word and replaces every underscore that represents the presence of the letter. After, it prints a confirmation
+        If the letter is in the word_to_guess it prints a confirmation message to the user and reduces the number of unique letters in the Hangman word_to_guess that have not been guessed yet. It then 
+        tells the user how many letters are left to guess in the Hangman word_to_guess and replaces every underscore that represents the presence of the letter. After, it prints a confirmation
         message and prints the updated word guessed to reflect the correct guess. 
         
-        If the letter is not in the word, it prints a commiseration message to user, reduces the number of lives by 1 and prints the incorrect letter and updated number of lives to user. 
+        If the letter is not in the word_to_guess, it prints a commiseration message to user, reduces the number of lives by 1 and prints the incorrect letter and updated number of lives to user. 
 
         Args:
-            letter (str): user input of letter to search word for, passed from ask_letter method. 
+            letter (str): user input of letter to search word_to_guess for, passed from ask_letter method. 
         """
         
-        if letter in self.word:
+        if letter in self.word_to_guess:
             print (f'\nGood guess! "{letter}" is in the word.')
-            self.num_letters -= 1
-            print(f'You have {self.num_letters} characters unguessed.')
+            self.num_unique_correct_letters_unguessed -= 1
+            print(f'The mystery word has {self.num_unique_correct_letters_unguessed} character(s) unguessed.')
 
-            for index in range(len(self.word_guessed)):
+            for index in range(len(self.word_guessed_user_visible)):
                 
-                if self.word[index] == letter:
-                    self.word_guessed[index] = letter
+                if self.word_to_guess[index] == letter:
+                    self.word_guessed_user_visible[index] = letter
                     
-            print(f'\t{self.word_guessed}')  
+            print(f'\t{self.word_guessed_user_visible}')  
       
         else:
             self.num_lives = self.num_lives - 1
-            print(f'\nSorry, "{letter}" is not in the word. You have {self.num_lives} lives left.')       
+            print(f'\nSorry, "{letter}" is not in the word. You have {self.num_lives} live(s) left.')       
 
 
 
@@ -91,7 +91,7 @@ class Hangman:
         
         It formats the input so that all characters are lowercase and removes whitespace. 
         
-        If the user input is 1 character, is alphabetical and has not been guessed before, it adds the guess to the lists_letters list of guessed letters and calls
+        If the user input is 1 character, is alphabetical and has not been guessed before, it adds the guess to the all_guessed_letters list of guessed letters and calls
         the check_letter method. 
         
         If the user input does not meet the above conditions, it prints a message restating what the user needs to do and asks the user to input another character until 
@@ -103,11 +103,11 @@ class Hangman:
         if (len(letter)!= 1) or (letter.isalpha()==False):
             print(f'Invalid input: "{letter}". Please, enter a single alphabetical character\n')     
 
-        elif letter in self.lists_letters: 
+        elif letter in self.all_guessed_letters: 
             print(f'You already tried "{letter}"!')   
 
         else:
-            self.lists_letters.append(letter)
+            self.all_guessed_letters.append(letter)
             self.__check_letter(letter)
     
     
@@ -121,26 +121,26 @@ def play_game(word_list):
     If all the letters in the Hangman word have been guessed, it prints a congratulations message to the user and ends the game. 
 
     Args:
-        word_list (list): list of words that the Hangman word is chosen from. 
+        word_list (list): list of words that the Hangman word_to_guess is chosen from. 
 
     Returns:
         0 : ends the game when the user has no lives left. 
     """
     game = Hangman (word_list, num_lives=5)
     
-    while '_' in game.word_guessed:
+    while '_' in game.word_guessed_user_visible:
 
         if game.num_lives > 0:
             game.ask_letter()
 
         elif game.num_lives == 0:
-            print(f'\nYou lost, you have {game.num_lives} left. The word was "{game.word}".')
+            print(f'\nYou lost, you have {game.num_lives} live(s) left. The word was "{game.word_to_guess}".')
             return 0
         #shouldn't run   
         else:
             print('Error.')
         
-    print(f'\nCongratulations, "{game.word}" was the right answer! You won!')
+    print(f'\nCongratulations, "{game.word_to_guess}" was the right answer! You won!')
             
 
 
