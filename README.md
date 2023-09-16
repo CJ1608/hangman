@@ -1,38 +1,39 @@
-# HANGMAN
+# Hangman
 
-## **Description**
-  This is a learning project based on guidance from AiCore. This is currently a WIP at the time of writing 12/9/23. 
+## Description
+  This is a project to create a simple Hangman game based on guidance from AiCore and following the hangman_Template.py file in this project. 
+
+  The project was to test the students ability to write clean Python code according to coding principles like DRY and to test their understanding 
+  of OOP amd other topics covered. 
+
+  Made using Python 3.11.4 amd VS Code 1.82.2
   
-  "Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
-  This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it." 
+ ## Table of Contents
+  LICENSE.txt
+  README.txt
+  .gitignore
+  hangman folder:
+    hangman_Template.py (template provided by AiCore)
+    milestone_2.py
+    milestone_3.py
+    milestone_4.py
+    milestone_5.py (code based on hangman_Template.py)
 
-## **Installation instructions**
+## Installation instructions
 
-### *Clone repo*
+### Clone repo
   git clone https://github.com/CJ1608/hangman.git 
 
-### *Install packages*
-  Random-Word 1.0.11  
-
-
-## **Usage instructions**
-  N.A.
-
-## **File structure of the project**
-  N.A.
-
-## **License information**
+## License information
   Distributed under the MIT License. See LICENSE.txt for more information. 
 
-## **Contact**
-  ### *Email*
+## Contact
+  ### Email
   128046995+CJ1608@users.noreply.github.com
-   ### *Repo link*
+   ### Repo link
   https://github.com/CJ1608/hangman.git 
 
-## **Hyperlinks to resources used**
-- Random-Word 1.0.11   https://pypi.org/project/Random-Word/  
+## Acknowledgements
+- https://choosealicense.com/
+- AiCore
 
-## **Acknowledgements**
-- https://choosealicense.com/ 
-- https://github.com/othneildrew/Best-README-Template/blob/master/README.md 
