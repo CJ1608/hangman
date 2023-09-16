@@ -6,7 +6,6 @@
   The project was to test the students ability to write clean Python code according to coding principles like DRY and to test their understanding 
   of OOP amd other topics covered. 
 
-  Made using Python 3.11.4 amd VS Code 1.82.2
   
  ## Table of Contents
  - LICENSE.txt
@@ -20,6 +19,8 @@
    - milestone_5.py (code based on hangman_Template.py)
 
 ## Installation instructions
+
+Made using Python 3.11.4 and VS Code 1.82.2
 
 ### Clone repo
   git clone https://github.com/CJ1608/hangman.git 
