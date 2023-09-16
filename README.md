@@ -9,15 +9,15 @@
   Made using Python 3.11.4 amd VS Code 1.82.2
   
  ## Table of Contents
-  LICENSE.txt
-  README.txt
-  .gitignore
-  hangman folder:
-    hangman_Template.py (template provided by AiCore)
-    milestone_2.py
-    milestone_3.py
-    milestone_4.py
-    milestone_5.py (code based on hangman_Template.py)
+ - LICENSE.txt
+ - README.txt
+ - .gitignore
+ - hangman folder:
+   - hangman_Template.py (template provided by AiCore)
+   - milestone_2.py
+   - milestone_3.py
+   - milestone_4.py
+   - milestone_5.py (code based on hangman_Template.py)
 
 ## Installation instructions
 
