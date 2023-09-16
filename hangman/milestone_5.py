@@ -56,11 +56,11 @@ class Hangman:
     
    
     def __check_letter(self, letter):
-        """Confirms whether the letter passed from the ask_letter method is in the Hangman word_to_guess being guessed. 
+        """Confirms whether the letter passed from the ask_letter method is in the word_to_guess variable. 
         
-        If the letter is in the word_to_guess it prints a confirmation message to the user and reduces the number of unique letters in the Hangman word_to_guess that have not been guessed yet. It then 
-        tells the user how many letters are left to guess in the Hangman word_to_guess and replaces every underscore that represents the presence of the letter. After, it prints a confirmation
-        message and prints the updated word guessed to reflect the correct guess. 
+        If the letter is in the word_to_guess it prints a confirmation message to the user and reduces the number of unique letters in the num_unique_correct_letters_unguessed variable. It then 
+        tells the user how many letters are left to guess in the word_guessed_user_visible and replaces every underscore that represents the presence of the letter. After, it prints a confirmation
+        message and prints the word_guessed_user_visible to reflect the correct guess. 
         
         If the letter is not in the word_to_guess, it prints a commiseration message to user, reduces the number of lives by 1 and prints the incorrect letter and updated number of lives to user. 
 
@@ -115,10 +115,10 @@ class Hangman:
 def play_game(word_list):
     """Creates an object of the class Hangman, checks if the game has finished and prints the appropriate message to the user. 
     
-    While there is still an unguessed letter in the Hangman word, it checks if the user has a life left or not. If the user doesn't have a life left, it prints a commiseration message and ends the game. 
+    While there is still an unguessed letter in the word_to_guess_user_visible, it checks if the user has a life left or not. If the user doesn't have a life left, it prints a commiseration message and ends the game. 
     If the user does have a life left, it calls the ask_letter method which in turn calls the check_letter method. 
     
-    If all the letters in the Hangman word have been guessed, it prints a congratulations message to the user and ends the game. 
+    If all the letters in the word_to_guess_user_visible have been guessed, it prints a congratulations message to the user and ends the game. 
 
     Args:
         word_list (list): list of words that the Hangman word_to_guess is chosen from. 
