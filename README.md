@@ -4,7 +4,7 @@
   This is a project to create a simple Hangman game based on guidance from AiCore and following the hangman_Template.py file in this project. 
 
   The project was to test the students ability to write clean Python code according to coding principles like DRY and to test their understanding 
-  of OOP amd other topics covered. 
+  of OOP and other topics covered. 
 
   
  ## Table of Contents
