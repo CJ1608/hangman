@@ -1,6 +1,5 @@
 import random
 
-#class definition
 class Hangman:
     """
     The class is used to represent an instance of a game of Hangman. 
@@ -33,8 +32,6 @@ class Hangman:
         ask_letter(self): 
             Accepts letter user enters only if the input is a singular alphabetical character. 
     """
-    
-
     def __init__(self, word_list, num_lives=5):
         """Initalise variables of the class and prints start message to user. 
 
@@ -44,17 +41,13 @@ class Hangman:
         """
         self.word_list = word_list
         self.num_lives = num_lives
-        
         self.word_to_guess = random.choice(word_list).lower()
         self.word_guessed_user_visible = ['_' for element in range(len(self.word_to_guess))]
         self.num_unique_correct_letters_unguessed = int(len(set(self.word_to_guess))) 
         self.all_guessed_letters = list()
-
         print(f'\nThe mystery word has {self.num_unique_correct_letters_unguessed} character(s) unguessed.')
         print(f'\t{self.word_guessed_user_visible}')
     
-    
-   
     def __check_letter(self, letter):
         """Confirms whether the letter passed from the ask_letter method is in the word_to_guess variable. 
         
@@ -67,24 +60,17 @@ class Hangman:
         Args:
             letter (str): user input of letter to search word_to_guess for, passed from ask_letter method. 
         """
-        
         if letter in self.word_to_guess:
             print (f'\nGood guess! "{letter}" is in the word.')
             self.num_unique_correct_letters_unguessed -= 1
             print(f'The mystery word has {self.num_unique_correct_letters_unguessed} character(s) unguessed.')
-
             for index in range(len(self.word_guessed_user_visible)):
-                
                 if self.word_to_guess[index] == letter:
-                    self.word_guessed_user_visible[index] = letter
-                    
+                    self.word_guessed_user_visible[index] = letter   
             print(f'\t{self.word_guessed_user_visible}')  
-      
         else:
             self.num_lives = self.num_lives - 1
             print(f'\nSorry, "{letter}" is not in the word. You have {self.num_lives} live(s) left.')       
-
-
 
     def ask_letter(self):
         """Accepts a letter that the user enters only if the input is a singular alphabetical character. 
@@ -97,21 +83,15 @@ class Hangman:
         If the user input does not meet the above conditions, it prints a message restating what the user needs to do and asks the user to input another character until 
         it gets one that meets the conditons.  
         """
-        
         letter = input('\nPlease enter a letter: ').casefold().strip()
-
         if (len(letter)!= 1) or (letter.isalpha()==False):
             print(f'Invalid input: "{letter}". Please, enter a single alphabetical character\n')     
-
         elif letter in self.all_guessed_letters: 
             print(f'You already tried "{letter}"!')   
-
         else:
             self.all_guessed_letters.append(letter)
             self.__check_letter(letter)
-    
-    
-     
+
 def play_game(word_list):
     """Creates an object of the class Hangman, checks if the game has finished and prints the appropriate message to the user. 
     
@@ -127,24 +107,17 @@ def play_game(word_list):
         0 : ends the game when the user has no lives left. 
     """
     game = Hangman (word_list, num_lives=5)
-    
     while '_' in game.word_guessed_user_visible:
-
         if game.num_lives > 0:
             game.ask_letter()
-
         elif game.num_lives == 0:
             print(f'\nYou lost, you have {game.num_lives} live(s) left. The word was "{game.word_to_guess}".')
             return 0
         #shouldn't run   
         else:
-            print('Error.')
-        
+            print('Error.')  
     print(f'\nCongratulations, "{game.word_to_guess}" was the right answer! You won!')
-            
-
-
-# check if main program or not   
+               
 if __name__ == '__main__':
     word_list = ['orange', 'california', 'biscuits', 'ivy', 'weather'] 
     play_game(word_list)
