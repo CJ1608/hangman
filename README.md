@@ -1,22 +1,13 @@
 # Hangman
 
 ## Description
-  This is a project to create a simple Hangman game based on guidance from AiCore and following the hangman_Template.py file in this project. 
+  This is a project to create a simple Hangman game. It is an introduction to using Object Orientated Programming and writing clean Python code according to PEP8 standards and coding principles like DRY. 
 
-  The project was to test the students ability to write clean Python code according to coding principles like DRY and to test their understanding 
-  of OOP and other topics covered. 
-
-  
  ## Table of Contents
  - LICENSE.txt
  - README.txt
  - .gitignore
- - hangman folder:
-   - hangman_Template.py (template provided by AiCore)
-   - milestone_2.py
-   - milestone_3.py
-   - milestone_4.py
-   - milestone_5.py (code based on hangman_Template.py)
+ - main.py
 
 ## Installation instructions
 
@@ -38,3 +29,7 @@ Made using Python 3.11.4 and VS Code 1.82.2
 - https://choosealicense.com/
 - AiCore
 
+## Resources Used
+https://peps.python.org/pep-0008/
+https://www.geeksforgeeks.org/7-common-programming-principles-that-every-developer-must-follow/
+https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP#:~:text=Object%2Doriented%20programming%20(OOP)%20is%20a%20computer%20programming%20model,has%20unique%20attributes%20and%20behavior. 
