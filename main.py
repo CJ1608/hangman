@@ -1,5 +1,6 @@
 import random
 
+
 class Hangman:
     """
     The class is used to represent an instance of a game of Hangman. 
